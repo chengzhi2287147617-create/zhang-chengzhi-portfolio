@@ -2,4 +2,4 @@
 
 公开求职作品集，共 62 件作品，包含 UE5 场景、动效、广告、AI 创意、UI 界面设计、剪辑和交互游戏。
 
-GitHub Actions 在发布时从既有作品存储读取视频并组装完整的 Pages 产物；网页最终由 GitHub Pages 提供访问。
+GitHub Actions 在发布时读取现有管理端的作品资料和媒体，并合并仓库内的 UI 界面作品，随后组装完整的 Pages 产物。管理端修改作品或精选后，在 Actions 中手动运行 `Publish portfolio` 即可同步公开页面。

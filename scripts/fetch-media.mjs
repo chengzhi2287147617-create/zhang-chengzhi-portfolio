@@ -5,7 +5,22 @@ import {pipeline} from 'node:stream/promises';
 
 const output=path.resolve(process.argv[2]||'_site');
 const origin='https://zhang-chengzhi-portfolio.chengzhi2287147617.chatgpt.site';
-const portfolio=JSON.parse(fs.readFileSync(path.join(output,'portfolio.json'),'utf8'));
+const committed=JSON.parse(fs.readFileSync(path.join(output,'portfolio.json'),'utf8'));
+let portfolio=committed;
+try{
+ const response=await fetch(`${origin}/api/portfolio`,{headers:{'user-agent':'zhang-chengzhi-pages-builder'}});
+ if(!response.ok)throw Error(`HTTP ${response.status}`);
+ const live=await response.json();
+ if(!Array.isArray(live.works))throw Error('invalid portfolio response');
+ const ids=new Set(live.works.map(work=>work.id));
+ portfolio={...live,works:[...live.works,...committed.works.filter(work=>work.id.startsWith('ui')&&!ids.has(work.id))]};
+ console.log(`Loaded ${live.works.length} managed works and merged ${portfolio.works.length-live.works.length} local UI works.`);
+}catch(error){console.warn(`Managed portfolio unavailable; using committed snapshot: ${error.message}`);}
+for(const work of portfolio.works){
+ for(const key of ['src','poster'])if(typeof work[key]==='string'&&work[key].startsWith('/'))work[key]='.'+work[key];
+ if(Array.isArray(work.gallery))work.gallery=work.gallery.map(item=>typeof item==='string'&&item.startsWith('/')?'.'+item:item);
+}
+fs.writeFileSync(path.join(output,'portfolio.json'),JSON.stringify(portfolio));
 const refs=new Set();
 for(const work of portfolio.works){
  for(const value of [work.src,work.poster,...(work.gallery||[])]){
