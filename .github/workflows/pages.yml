@@ -1,4 +1,5 @@
-name: Publish portfolio
+name: 同步作品到公开网站
+run-name: 同步管理端作品到公开网站
 on:
   push:
     branches: [main]
@@ -23,6 +24,7 @@ jobs:
           mkdir _site
           cp -r assets games media index.html 404.html portfolio.json .nojekyll _site/
           node scripts/fetch-media.mjs _site
+          node scripts/optimize-videos.mjs _site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
