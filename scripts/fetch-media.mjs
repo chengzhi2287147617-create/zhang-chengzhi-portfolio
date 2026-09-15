@@ -25,7 +25,7 @@ fs.writeFileSync(path.join(output,'portfolio.json'),JSON.stringify(portfolio));
 const refs=new Set();
 for(const work of portfolio.works){
  for(const value of [work.src,work.poster,...(work.gallery||[])]){
-  if(typeof value==='string'&&value.replace(/^\.\//,'/').startsWith('/media/'))refs.add(value.replace(/^\.\//,''));
+  if(typeof value==='string'&&['/media/','/uploads/'].some(prefix=>value.replace(/^\.\/,'/').startsWith(prefix)))refs.add(value.replace(/^\.\/,''));
  }
 }
 const pending=[...refs].filter(file=>!fs.existsSync(path.join(output,file)));
