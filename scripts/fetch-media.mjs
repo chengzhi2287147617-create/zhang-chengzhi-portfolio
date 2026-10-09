@@ -13,7 +13,7 @@ try{
  if(!response.ok)throw Error(`HTTP ${response.status}`);
  const live=await response.json();
  if(!Array.isArray(live.works))throw Error('invalid portfolio response');
- const ids=new Set(live.works.map(work=>work.id));
+ const ids=new Set([...live.works.map(work=>work.id),...(live.registeredSupplementIds||[])]);
  portfolio={...live,works:[...live.works,...committed.works.filter(work=>(work.id.startsWith('ui')||work.id.startsWith('project_'))&&!ids.has(work.id))]};
  console.log(`Loaded ${live.works.length} managed works and merged ${portfolio.works.length-live.works.length} local projects.`);
 }catch(error){console.warn(`Managed portfolio unavailable; using committed snapshot: ${error.message}`);}
