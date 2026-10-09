@@ -1,0 +1,65 @@
+[
+  {
+    "file": "public/textures/brick-diff.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brick_wall_001/brick_wall_001_diffuse_1k.jpg",
+    "asset": "brick_wall_001",
+    "md5": "955D2D4500EB549BE0F2873305782798",
+    "license": "CC0"
+  },
+  {
+    "file": "public/textures/brick-nor_gl.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brick_wall_001/brick_wall_001_nor_gl_1k.jpg",
+    "asset": "brick_wall_001",
+    "md5": "BE151875ED0897FC716AEEF6DAAC8BD5",
+    "license": "CC0"
+  },
+  {
+    "file": "public/textures/brick-rough.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brick_wall_001/brick_wall_001_rough_1k.jpg",
+    "asset": "brick_wall_001",
+    "md5": "618CECA60A4321AECC6D61EEBE53D551",
+    "license": "CC0"
+  },
+  {
+    "file": "public/textures/wood-diff.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_planks_grey/wood_planks_grey_diff_1k.jpg",
+    "asset": "wood_planks_grey",
+    "md5": "F2B4A70FED329C13850917C5F2D1498C",
+    "license": "CC0"
+  },
+  {
+    "file": "public/textures/wood-nor_gl.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_planks_grey/wood_planks_grey_nor_gl_1k.jpg",
+    "asset": "wood_planks_grey",
+    "md5": "FE633EA606AC22B732D4204A7FA52B03",
+    "license": "CC0"
+  },
+  {
+    "file": "public/textures/wood-rough.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_planks_grey/wood_planks_grey_rough_1k.jpg",
+    "asset": "wood_planks_grey",
+    "md5": "EB620BF4C075153D9272DE00F1BF7633",
+    "license": "CC0"
+  },
+  {
+    "file": "public/textures/stone-diff.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_08/cobblestone_floor_08_diff_1k.jpg",
+    "asset": "cobblestone_floor_08",
+    "md5": "BB640125356D18E3AD8515B9D5BFCCEF",
+    "license": "CC0"
+  },
+  {
+    "file": "public/textures/stone-nor_gl.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_08/cobblestone_floor_08_nor_gl_1k.jpg",
+    "asset": "cobblestone_floor_08",
+    "md5": "7A90780C7C49A1307E928D4D32C4773C",
+    "license": "CC0"
+  },
+  {
+    "file": "public/textures/stone-rough.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_08/cobblestone_floor_08_rough_1k.jpg",
+    "asset": "cobblestone_floor_08",
+    "md5": "1471921512DA4A43E94EC08C32C273F7",
+    "license": "CC0"
+  }
+]
